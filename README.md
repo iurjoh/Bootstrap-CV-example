@@ -1,3 +1,46 @@
+# Bootstrap CV example
+
+An educational multi-page CV site for the sample persona "Rosie Odenkirk", not Iuri's verified biography.
+
+[Português (Brasil)](README.pt-BR.md)
+
+## Idea and process
+
+Source reviewed on 2026-10-01. Based on Code Institute template/course material. No dated planning notes, wireframes or original design diary were found in the reviewed files. Sample CV claims and contact details must not be treated as facts about this repository's owner.
+
+## Architecture and design
+
+Root pages cover home, resume, contact, interests, GitHub and 404. Static assets supply styling and scripts. The CV layout is a course example, not a freshly designed personal portfolio.
+
+- `assets/js/github-information.js` fetches public GitHub user/repository data with jQuery, handles empty/404/rate-limit states and renders HTML.
+- `assets/js/maps.js` creates a Google map and sample markers with clustering.
+- `assets/js/sendEmail.js` sends contact name, email and project request via EmailJS. It logs success/failure to the console and blocks normal form navigation.
+- package.json includes `@emailjs/browser` ^3.10.0; contact.html also loads its CDN client.
+
+## Local preview
+
+```bash
+python3 -m http.server 8000
+```
+
+Open localhost:8000. External libraries/APIs need network access. Do not submit the contact form with personal data: it makes an external EmailJS request. No email, map/API action, package install or application run was performed here, and no public deployment was verified.
+
+## Testing, privacy and limitations
+
+No dedicated test script appears in the reviewed package manifest. No tests were run. Verify navigation, 404, responsive layouts, accessible labels, GitHub empty/error/rate-limit states and safe output rendering using synthetic data. GitHub responses are interpolated into HTML; review escaping and URL handling. Verify Maps/EmailJS configuration, recipient, consent and user-visible error/success feedback before enabling a real contact workflow. Existing browser identifiers are configuration, not authorization to send email or make paid API calls.
+
+## Snapshots
+
+No application screenshot was verified or added. Future dated captures under docs/assets/ should be labeled as this fictional CV example and hide contact data/keys. Do not present sample persona claims as Iuri's work history.
+
+## Credits and licensing
+
+Code Institute course/template material and third-party libraries/assets retain their original rights. No new license was applied. The original README remains below as historical reference, not current setup advice.
+
+---
+
+## Original README
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome Iuri Johansson,
